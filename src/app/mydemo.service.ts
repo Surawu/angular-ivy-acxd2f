@@ -1,13 +1,14 @@
 import { Injectable, ViewChild } from "@angular/core";
-import { NewsComponent } from "./components/news/news.component";
 
 @Injectable()
 export class MydemoService {
-  @ViewChild(NewsComponent, { static: false })
-  viewChildOnRef: NewsComponent;
-  constructor() {}
+  constructor() {
+    MydemoService.count++;
+  }
+
+  private static count = 0;
 
   getNewsContainer() {
-    alert(this.viewChildOnRef.getContainer());
+    console.log("++++ " + MydemoService.count);
   }
 }

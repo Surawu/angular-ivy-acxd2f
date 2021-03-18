@@ -1,4 +1,5 @@
-import { Component, VERSION, AfterViewInit, ViewChild } from "@angular/core";
+import { Component, VERSION, AfterViewInit } from "@angular/core";
+import { MydemoService } from "./mydemo.service";
 
 @Component({
   selector: "my-app",
@@ -7,7 +8,9 @@ import { Component, VERSION, AfterViewInit, ViewChild } from "@angular/core";
 })
 export class AppComponent implements AfterViewInit {
   name = "Angular " + VERSION.major;
-  constructor() {}
+  constructor(public demo: MydemoService) {}
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    this.demo.getNewsContainer();
+  }
 }

@@ -1,11 +1,12 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
+import { MydemoService } from "../../mydemo.service";
 
 @Component({
   selector: "app-news",
   templateUrl: "./news.component.html",
   styleUrls: ["./news.component.css"]
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent implements OnInit, AfterViewInit {
   public list: string[] = ["a", "b", "c"];
 
   @ViewChild("footer") footer: any;
@@ -14,7 +15,11 @@ export class NewsComponent implements OnInit {
 
   public title1: string = "hi";
 
-  constructor() {}
+  constructor(public demo: MydemoService) {}
+
+  ngAfterViewInit(): void {
+    this.demo.getNewsContainer();
+  }
 
   ngOnInit() {}
 
@@ -22,7 +27,5 @@ export class NewsComponent implements OnInit {
     alert(this.footer.msg);
   }
 
-  getContainer() {
-    alert(this.container);
-  }
+  getContainer() {}
 }

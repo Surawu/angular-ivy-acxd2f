@@ -13,8 +13,6 @@ import { NewscontentComponent } from "./components/newscontent/newscontent.compo
 import { WelcomeComponent } from "./components/home/welcome/welcome.component";
 import { SettingComponent } from "./components/home/setting/setting.component";
 import { MydemoService } from "./mydemo.service";
-import { TestcomponentComponent } from './components/testcomponent/testcomponent.component';
-import { ChildComponent } from './components/child/child.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
@@ -27,9 +25,7 @@ import { ChildComponent } from './components/child/child.component';
     NewsComponent,
     NewscontentComponent,
     WelcomeComponent,
-    SettingComponent,
-    TestcomponentComponent,
-    ChildComponent
+    SettingComponent
   ],
   bootstrap: [AppComponent],
   providers: [MydemoService]
