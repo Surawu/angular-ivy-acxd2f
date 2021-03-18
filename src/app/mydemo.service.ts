@@ -1,6 +1,8 @@
 import { Injectable, ViewChild } from "@angular/core";
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class MydemoService {
   constructor() {
     MydemoService.count++;

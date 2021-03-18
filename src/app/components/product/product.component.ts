@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { MydemoService } from "../../mydemo.service";
 
 @Component({
@@ -6,8 +6,12 @@ import { MydemoService } from "../../mydemo.service";
   templateUrl: "./product.component.html",
   styleUrls: ["./product.component.css"]
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, AfterViewInit {
   constructor(public demo: MydemoService) {}
+
+  ngAfterViewInit(): void {
+    this.demo.getNewsContainer();
+  }
 
   ngOnInit() {
     var canvas = document.getElementById("cdtGraphview");
