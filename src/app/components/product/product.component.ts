@@ -7,10 +7,16 @@ import { MydemoService } from "../../mydemo.service";
   styleUrls: ["./product.component.css"]
 })
 export class ProductComponent implements OnInit, AfterViewInit {
-  constructor(public demo: MydemoService) {}
+  public msg: any = "hi, this is ProductComponent";
 
+  constructor(public demo: MydemoService) {
+    demo.productInstance = this;
+  }
+
+  // 需要先切到 product tab，否则提示 Cannot read property 'msg' of undefined。 因为，此时 demo.productInstance = this; 未执行
   ngAfterViewInit(): void {
     this.demo.getNewsContainer();
+    console.log(this.demo.productInstance.msg);
   }
 
   ngOnInit() {
