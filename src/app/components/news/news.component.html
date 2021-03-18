@@ -1,0 +1,16 @@
+<app-newscontent [title]="title1" #footer></app-newscontent>
+
+<br>
+
+<div #container>GOODBYE FROM CONTAINER</div>
+
+<button (click)="getFooterMsg()">get footer msg</button>
+
+<br>
+<a [routerLink]="['/newscontent']">redirect to newscontent</a>
+
+<ul>
+  <li *ngFor="let item of list; let key=index;">
+    <a [routerLink]="['/newscontent']" [queryParams]="{aid:key}">{{key}}---{{item}}</a>
+  </li>
+</ul>

@@ -1,0 +1,63 @@
+<h1>
+  {{title}}
+</h1>
+
+<div>
+  1+1={{1+1}}
+</div>
+
+<div [innerHTML]='h'></div>
+
+<div [id]='id' [title]="title">using debugger to see information</div>
+
+<ul>
+  <li *ngFor="let item of list;let i = index;">
+    {{item}} --{{i}}
+  </li>
+</ul>
+
+<p *ngIf="list.length > 3">这是ngIF 判断是否显示</p>
+
+<ul [ngSwitch]="source">
+  <li *ngSwitchCase='1'>111</li>
+</ul>
+
+<button class="button" (click)="getData()">
+  get data
+</button>
+<br/>
+<br/>
+
+<button class="button" (click)="setData()">
+  set data
+</button>
+<br/>
+<br/>
+<input type="text" (keyup)="keyUpFn($event)" />
+
+<br/>
+<br/>
+
+<p>{{inputValue}}</p>
+<input type="text" [(ngModel)]="inputValue"/>
+
+
+<ul>
+  <li *ngFor="let item of userList; let i = index;">
+    {{item.username}} --- {{item.age}}
+  </li>
+</ul>
+
+<div [ngClass]="{'red': flag, 'blue': !flag}">
+  这是一个div
+</div>
+
+<button type="button" class="big-font" [ngClass]="classStyler">Submit</button>
+
+<div>
+  <label for="one">Terms of Service</label>
+  <input #one id="one" type="checkbox" (change)="updateTos(one.checked)"/>
+
+  <label for="two">Send Usage Information</label>
+  <input #two id="two" type="checkbox" (change)="updateUsage(two.checked)">
+</div>

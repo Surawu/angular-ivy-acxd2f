@@ -1,0 +1,26 @@
+<h1>insert image</h1>
+
+<div class="red">ngclass </div>
+<div [ngClass]="{'red':true}">ngclass 234</div>
+
+<div [ngClass]="{'red':flag, 'green':!flag}">ngclass 234</div>
+
+<ul>
+  <li *ngFor="let item of userList; let key=index;" [ngClass]="{'red':key==0,'green':key!=0}">
+    {{item | json}}
+  </li>
+</ul>
+
+<p style="color:red">this is p</p>
+<p [ngStyle]="{'color':'blue'}">this is p</p>
+<p [ngStyle]="{'color':attr}">this is p1</p>
+
+<button (click)="runEvent($event)">click me</button>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<img [src]="pictureUrl"/>
