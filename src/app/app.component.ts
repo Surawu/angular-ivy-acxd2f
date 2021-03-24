@@ -12,5 +12,9 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.demo.getNewsContainer();
+    let results = [10, 12, 14];
+    let newNumbers = [...results, 45, 56];
+
+    newNumbers.forEach(i => console.log(i));
   }
 }
