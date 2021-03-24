@@ -15,6 +15,8 @@ export class AppComponent implements AfterViewInit {
     let results = [10, 12, 14];
     let newNumbers = [...results, 45, 56];
 
+    console.log(results.map(e => 1));
+
     newNumbers.forEach(i => console.log(i));
   }
 }
