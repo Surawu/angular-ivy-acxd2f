@@ -6,6 +6,11 @@ import { ActivatedRoute } from "@angular/router";
   templateUrl: "./newscontent.component.html",
   styleUrls: ["./newscontent.component.css"]
 })
+interface obj {
+  a: string;
+  b: number;
+}
+type readony1 = Readonly<obj>;
 export class NewscontentComponent implements OnInit {
   @Input() title: any;
 
